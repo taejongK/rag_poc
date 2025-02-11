@@ -1,4 +1,6 @@
 import streamlit as st
+import requests
+from main import *
 
 # 페이지 제목
 st.title("BA Chatbot")
@@ -19,9 +21,6 @@ if user_input:
     # 사용자 메시지를 상태에 추가
     st.session_state.messages.append({"role": "user", "content": user_input})
     # print(st.session_state.messages)
-    
-    # API 호출
-    # bot_response = call_api(user_input)  # 실제 API 호출 코드로 대체
 
     # 화면에 표시
     with st.chat_message("user"):
@@ -29,7 +28,10 @@ if user_input:
 
     ##### 간단한 응답 예제 (실제 AI 모델과 연동 가능) #####
     # 나중에 bot_response로 대체
-    bot_response = f"🤖: {user_input}에 대해 더 알고 싶나요?"
+    # bot_response = f"🤖: {user_input}에 대해 더 알고 싶나요?"
+    response = requests.post("http://127.0.0.1:8000/get_answer",
+                             json={"question": "What is your name?"})
+    bot_response = response.json()["answer"]
     ########################################################
 
     # 챗봇 응답을 상태에 추가
