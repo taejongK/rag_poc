@@ -1,5 +1,17 @@
 # rag_poc
 
+## 실행
+### API 실행
+```
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+### Client 실행
+```
+streamlit run client.py  
+```
+
+
 ## 구성
 ### 데이터 
 - BA_사용메뉴얼_분석가.pdf(회사)
