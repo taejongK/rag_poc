@@ -3,11 +3,13 @@
 ## 실행
 ### API 실행
 ```
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+cd src/app
+python3 main.py
 ```
 
 ### Client 실행
 ```
+cd src/app
 streamlit run client.py  
 ```
 
@@ -15,6 +17,7 @@ streamlit run client.py
 ## 구성
 ### 데이터 
 - BA_사용메뉴얼_분석가.pdf(회사)
+- 데이터는 기밀사항이라 숨김 처리
 
 ### PDF2Markdown
 - pdf_reading_test.ipynb에서 pdf를 읽어와서 markdown으로 변환하는 코드를 작성하였습니다.
